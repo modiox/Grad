@@ -1,6 +1,4 @@
 <?php
-  $Write="<?php $" . "UIDresult=''; " . "echo $" . "UIDresult;" . " ?>";
-  file_put_contents('UIDContainer.php',$Write);
 
     require 'database.php';
     $id = null;
@@ -17,11 +15,11 @@
   $data = $q->fetch(PDO::FETCH_ASSOC);
   Database::disconnect();
   
-  //Echo item doesn't exist 
+  // item doesn't exist 
   $msg = null;
   if (null==$data['Name']) {
   
-  echo "Item does not exist...";
+  //echo "Item does not exist...";
   } 
   ?>
 
@@ -545,7 +543,7 @@
                   <a href="#" class="link-box">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span>
-                      demo@gmail.com
+                    smart.cart.project2021@gmail.com
                     </span>
                   </a>
                 </div>
@@ -614,29 +612,7 @@
         }
       }
 
-/// http code to establish a connection between ESP and GUI 
-      
-      function showUser(str) {
-        if (str == "") {
-          document.getElementById("show_user_data").innerHTML = "";
-          return;
-        } else {
-          if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-          } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-          }
-          xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("show_user_data").innerHTML = this.responseText;
-            }
-          };
-          xmlhttp.open("GET","read tag.php?id="+str,true);
-          xmlhttp.send();
-        }
-      }
+
       
       var blink = document.getElementById('blink');
       setInterval(function() {
