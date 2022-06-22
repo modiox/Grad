@@ -1,0 +1,38 @@
+.item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-pay {
+    background-color: #C800Da;
+    border: 0;
+    color: #fff;
+    font-weight: 600;
+}
+
+.fa-ticket {
+    color: #0e1fa1;
+}
+.calculation {
+
+position: relative;
+margin-left: 50%;
+width: 530px;
+height: 100px;
+padding-bottom: 20%;
+
+
+}
+
+.firstStyle {
+position: relative;
+top:  0px;
+width: 1000px;
+height: 100px;
+margin-top: 100px;
+margin-right: 590px;
+margin-left: -20px;
+
+
+}
