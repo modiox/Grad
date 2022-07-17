@@ -1,5 +1,6 @@
 <?php
 
+
     require 'database.php';
     $id = null;
     if ( !empty($_GET['id'])) {
@@ -15,7 +16,7 @@
   $data = $q->fetch(PDO::FETCH_ASSOC);
   Database::disconnect();
   
-  // item doesn't exist 
+  //Echo item doesn't exist 
   $msg = null;
   if (null==$data['Name']) {
   
@@ -89,11 +90,11 @@
 <body>
 
   <!-- header section strats -->
-  <header class="header_section">
+  <header class="header_section header_inner">
     <div class="container">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.html">
-          <span>Smart mart</span>
+        <a class="navbar-brand" href="index.php">
+          <span>Smart Mart</span>
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,21 +103,29 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item ">
+              <a class="nav-link" href="index.php">Home </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html"> About</a>
             </li>
-            <div class="dropdown">
-              <form method="post" action="Search.php"> <li onclick="myFunction()" class="dropbtn" class="nav-link">SEARCH</li> 
+            <li class="nav-item">
+             <form method="post" action="Search.php"> <a class="nav-link" onclick="myFunction()" class="dropbtn">Search</a>
               <div id="myDropdown" class="dropdown-content" >
                 <input type="text" placeholder="Search.." id="myInput" name="myInput" onkeyup="filterFunction()"> 
              </form>
-              </div>
-            </div>
-            
-            <script>
+           </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contact.html">Contact Us <span class="sr-only">(current)</span> </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
+ <script>
             /* When the user clicks on the button, 
             toggle between hiding and showing the dropdown content 
             the search dropdown*/
@@ -140,15 +149,7 @@
               }
             }
             </script>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <style>
+             <style>
       /* .parent {
         position: relative;
         top: 0;
@@ -234,7 +235,7 @@
 .show {display: block;}
 
     </style>
-  </header>
+
   <!-- end header section -->
   <!-- slider section -->
   <section class="slider_section ">
@@ -312,14 +313,14 @@
       </div>
 
 
-<!-- Testing the scanning  --> 
+<!-- Testing the scanning 
 
        <h3 align="center" id="blink"><font color="black">Please Scan Tag to Display ID or User Data</font></h3>
        <p id="getUID" hidden></p>
 
        <div id="show_user_data">
 
-        <!-- id for GET[] and POST[] -->
+        <!-- id for GET[] and POST[]
       <form id="id" id="TagID">
         <table  width="452" border="1" bordercolor="#10a0c5" align="center"  cellpadding="0" cellspacing="1"  bgcolor="#000" style="padding: 2px">
           <tr>
@@ -345,30 +346,33 @@
           </tr>
         </table>
       </form>
-    </div>
+    </div>  -->  
 
-  <!-- the cast that we will use -->
-            <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-xl-7 col-lg-8 col-md-7">
-         
-          </div>
+  <!-- the cart that we will use -->
+      <div class="container mt-4">
+      <div class="row ">
+        <div class="col-12">
           <div class="firstStyle">
              <div class="border border-gainsboro p-3">
 
-            <h2 class="h6 text-uppercase mb-0">Cart Total: <strong class="cart-total"></strong></h2>
+              <h2 class="h6 text-uppercase mb-0">Cart Total: <strong class="cart-total"></strong></h2>
+            </div>
           </div>
+        </div>  
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
           <div class="border border-gainsboro p-3 mt-3 clearfix item">
             <div class="text-lg-left">
               <i class="fa fa-ticket fa-2x text-center" aria-hidden="true"></i>
             </div>
-            <div class="col-lg-5 col-5 text-lg-left">
+            <div class="col-lg-3 col-3 text-lg-left">
               <h3 class="h6 mb-0"><?php echo $data['Name'];?><br>
                 <small>Cost: <?php echo $data['Price'];?></small>
               </h3>
             </div>
             <div class="product-price d-none"><?php echo $data['Price'];?></div>
-            <div class="pass-quantity col-lg-3 col-md-4 col-sm-3">
+            <div class="pass-quantity col-lg-3 col-md-3 col-sm-3">
               <label for="pass-quantity" class="pass-quantity">Quantity</label>
               <input class="form-control" type="number" value="1" min="1">
             </div>
@@ -387,11 +391,11 @@
             <div class="text-lg-left">
               <i class="fa fa-ticket fa-2x text-center" aria-hidden="true"></i>
             </div>
-            <div class="col-lg-5 col-5 text-lg-left">
+            <div class="col-lg-3 col-3 text-lg-left">
               <h3 class="h6 mb-0" name="proname[]"><?php echo $data['Name'];?> <br><small name="price[]">Cost: <small><?php echo $data['Price'];?></small></small></h3>
             </div>
             <div class="product-price d-none"><?php echo $data['Price'];?></div>
-            <div class="pass-quantity col-lg-3 col-md-4 col-sm-3">
+            <div class="pass-quantity col-lg-3 col-md-3 col-sm-3">
               <label for="pass-quantity" class="pass-quantity">Quantity</label>
               <input class="form-control" type="number" value="1" min="1">
             </div>
@@ -404,35 +408,41 @@
               </button>
             </div>
           </div><!-- item -->
-        </div>
-      </div>
+        </div> 
 
-        <div class="calculation">
-          <div class="border border-gainsboro px-3">
-            <div class="border-bottom border-gainsboro">
-              <p class="text-uppercase mb-0 py-3"><strong>Order Summary</strong></p>
+        <!-- End of left column -->
+
+        <!-- Right column -->
+        <div class="col-12 col-md-6">
+          <div class="calculation">
+            <div class="border border-gainsboro px-3 mt-3">
+              <div class="border-bottom border-gainsboro">
+                <p class="text-uppercase mb-0 py-3"><strong>Order Summary</strong></p>
+              </div>
+              <div class="totals-item d-flex align-items-center justify-content-between mt-3">
+                <p class="text-uppercase">Subtotal</p>
+                <p class="totals-value" id="cart-subtotal"></p>
+              </div>
+              <div class="totals-item d-flex align-items-center justify-content-between">
+                <p class="text-uppercase">Estimated Tax</p>
+                <p class="totals-value" id="cart-tax"></p>
+              </div>
+              <div class="totals-item totals-item-total d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-gainsboro">
+                <p class="text-uppercase"><strong>Total</strong></p>
+                <p class="totals-value font-weight-bold cart-total"></p>
+              </div>
             </div>
-            <div class="totals-item d-flex align-items-center justify-content-between mt-3">
-              <p class="text-uppercase">Subtotal</p>
-              <p class="totals-value" id="cart-subtotal"></p>
-            </div>
-            <div class="totals-item d-flex align-items-center justify-content-between">
-              <p class="text-uppercase">Estimated Tax</p>
-              <p class="totals-value" id="cart-tax"></p>
-            </div>
-            <div class="totals-item totals-item-total d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-gainsboro">
-              <p class="text-uppercase"><strong>Total</strong></p>
-              <p class="totals-value font-weight-bold cart-total"></p>
-            </div>
+            <a href="Checkout.php" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0"> 
+                <!-- container style for the button class= btn-box -->  <span class="totals-value cart-total"> Pay Now</span> </a>
           </div>
-          <a href="Checkout.php" class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0"> 
-              <!-- container style for the button class= btn-box -->
-      Pay Now <span class="totals-value cart-total"></span> </a>
+
         </div>
-
+        <!-- End of right column -->
       </div>
+    </div>
+      
 
-        <script>
+     <script>
       $(document).ready(function() {
 
         /* Set rates + misc */
@@ -540,10 +550,10 @@
                   </a>
                 </div>
                 <div class="col-md-4">
-                  <a href="#" class="link-box">
+                  <a href="mailto:smart.cart.project2021@gmail.com" class="link-box">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span>
-                    smart.cart.project2021@gmail.com
+                          smart.cart.project2021@gmail.com
                     </span>
                   </a>
                 </div>
@@ -562,7 +572,7 @@
           </div>
         </div>
         <div class="info_logo">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
               Smart Cart
             </span>
@@ -612,7 +622,29 @@
         }
       }
 
-
+/// http code to establish a connection between ESP and GUI 
+      
+      function showUser(str) {
+        if (str == "") {
+          document.getElementById("show_user_data").innerHTML = "";
+          return;
+        } else {
+          if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+          } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("show_user_data").innerHTML = this.responseText;
+            }
+          };
+          xmlhttp.open("GET","read tag.php?id="+str,true);
+          xmlhttp.send();
+        }
+      }
       
       var blink = document.getElementById('blink');
       setInterval(function() {
